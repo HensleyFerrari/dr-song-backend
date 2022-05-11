@@ -21,7 +21,7 @@ const login = (req, res, next) => {
         if (err) {
             return sendErrorsFromDB(res, err)
         } else if (user && bcrypt.compareSync(password, user.password)) {
-            const token = jwt.sign(user, process.env.AUTH_SECRET, {
+            const token = jwt.sign(user.toJSON(), process.env.AUTH_SECRET, {
                 expiresIn: "7 days"
             })
             const { name, email } = user

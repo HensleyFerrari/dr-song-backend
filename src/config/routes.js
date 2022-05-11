@@ -8,25 +8,25 @@ const ItemService = require('../api/itemService')
 const AuthService = require('../api/user/authService')
 const InfoService = require('../api/info/infoService')
 
-routes.use(auth)
+// routes.use(auth)
 
 // API PROTEGIDA PRO TOKEN
 
-routes.get('/api/listas', ListaService.index)
-routes.get('/api/listas/:id', ListaService.show)
-routes.post('/api/listas', ListaService.store)
-routes.put('/api/listas/:id', ListaService.update)
-routes.delete('/api/listas/:id', ListaService.destroy)
+// routes.get('/api/listas', auth, ListaService.index)
+// routes.get('/api/listas/:id', auth, ListaService.show)
+// routes.post('/api/listas', auth, ListaService.store)
+// routes.put('/api/listas/:id', auth, ListaService.update)
+// routes.delete('/api/listas/:id', auth, ListaService.destroy)
 
-routes.post('/api/listas/:id', ItemService.store)
-routes.put('/api/items/:id', ItemService.update)
-routes.delete('/api/listas/:id/:item_id', ItemService.destroy)
+// routes.post('/api/listas/:id', auth, ItemService.store)
+// routes.put('/api/items/:id', auth, ItemService.update)
+// routes.delete('/api/listas/:id/:item_id', auth, ItemService.destroy)
 
-routes.get('/api/info', InfoService.index)
-routes.get('/api/info/:id', InfoService.show)
-routes.post('/api/info', InfoService.store)
-routes.put('/api/info/:id', InfoService.update)
-routes.delete('/api/info/:id', InfoService.destroy)
+routes.get('/api/info', auth, InfoService.index)
+routes.get('/api/info/:id', auth, InfoService.show)
+routes.post('/api/info', auth, InfoService.store)
+routes.put('/api/info/:id', auth, InfoService.update)
+routes.delete('/api/info/:id', auth, InfoService.destroy)
 
 // API PUBLICA
 
