@@ -16,7 +16,7 @@ server.use(cors())
 server.use(express.urlencoded({ extended: true }))
 server.use(express.json())
 
-server.use('/api', require('./routes'))
+server.use(require('./routes'))
 
 server.listen(port, () => {
     console.log(`Server is running on port ${port}`)
