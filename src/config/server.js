@@ -1,5 +1,3 @@
-const port = 3003
-
 require('dotenv').config()
 
 const express = require('express')
@@ -18,7 +16,7 @@ server.use(express.json())
 
 server.use(require('./routes'))
 
-server.listen(port, () => {
+server.listen(process.env.PORT || 5000, () => {
     console.log(`Server is running on port ${port}`)
 })
 
