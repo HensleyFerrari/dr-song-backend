@@ -10,7 +10,7 @@ const InfoService = require('../api/info/infoService')
 
 // routes.use(auth)
 
-// API PROTEGIDA PRO TOKEN
+// API PROTEGIDA POR TOKEN
 
 // routes.get('/api/listas', auth, ListaService.index)
 // routes.get('/api/listas/:id', auth, ListaService.show)
@@ -22,11 +22,11 @@ const InfoService = require('../api/info/infoService')
 // routes.put('/api/items/:id', auth, ItemService.update)
 // routes.delete('/api/listas/:id/:item_id', auth, ItemService.destroy)
 
-routes.get('/api/info', auth, InfoService.index)
-routes.get('/api/info/:id', auth, InfoService.show)
-routes.post('/api/info', auth, InfoService.store)
-routes.put('/api/info/:id', auth, InfoService.update)
-routes.delete('/api/info/:id', auth, InfoService.destroy)
+routes.get('/api/info', auth, InfoService.index) //READ ALL
+routes.get('/api/info/:id', auth, InfoService.show) // READ ONE
+routes.post('/api/info', auth, InfoService.store) // CREATE
+routes.put('/api/info/:id', auth, InfoService.update) //UPDATE 
+routes.delete('/api/info/:id', auth, InfoService.destroy) //DELETE
 
 // API PUBLICA
 
