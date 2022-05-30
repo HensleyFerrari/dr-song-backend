@@ -7,14 +7,13 @@ const infoSchema = new mongoose.Schema({
     tag: { type: String }, // "Opening", 'Ending', 'OST', 'Song'
     url: { type: String, required: true },
     spotify: { type: Boolean, default: false }, // true: Spotify, false: Youtube
-    image: { type: String }, // Link da imagem 
-    createdAt: { type: Date, default: Date.now }, // Data de criação    
+    image: { type: String }, // Link da imagem do anime ou musica
     createdBy: {
         id: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}, // ID do usuário que criou
         name: {type: String, required: true} // Nome do usuário que criou
     },
+    picked: { type: Number, default: 0}, // Quantidade de vezes que foi escolhido
     updatedBy: {type: String}, // Nome do usuário que atualizou
-    updatedAt: {type: Date, timestamp: true} // Data da última atualização
-})
+}, { timestamps: true })
 
 module.exports = mongoose.model('Info', infoSchema)

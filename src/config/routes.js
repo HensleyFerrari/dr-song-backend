@@ -23,9 +23,11 @@ const InfoService = require('../api/info/infoService')
 // routes.delete('/api/listas/:id/:item_id', auth, ItemService.destroy)
 
 routes.get('/api/info', auth, InfoService.index) //READ ALL
+routes.get('/api/info/popular', auth, InfoService.indexPopular) //READ ALL
 routes.get('/api/info/:id', auth, InfoService.show) // READ ONE
 routes.post('/api/info', auth, InfoService.store) // CREATE
 routes.put('/api/info/:id', auth, InfoService.update) //UPDATE 
+routes.put('/api/info/:id/popular', auth, InfoService.updatePopular) //UPDATE POPULAR
 routes.delete('/api/info/:id', auth, InfoService.destroy) //DELETE
 
 // API PUBLICA
