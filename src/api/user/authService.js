@@ -22,7 +22,7 @@ const login = (req, res, next) => {
             return sendErrorsFromDB(res, err)
         } else if (user && bcrypt.compareSync(password, user.password)) {
             const token = jwt.sign(user.toJSON(), process.env.AUTH_SECRET, {
-                expiresIn: "7 days"
+                expiresIn: "365d"
             })
             const { name, email, _id, admin } = user
             res.json({ name, email, token, _id, admin })

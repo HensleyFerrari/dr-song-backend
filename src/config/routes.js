@@ -3,8 +3,8 @@ const auth = require('./auth')	// middleware de autenticação
 
 const routes = express.Router()
 
-const ListaService = require('../api/listaService')
-const ItemService = require('../api/itemService')
+// const ListaService = require('../api/listaService')
+// const ItemService = require('../api/itemService')
 const AuthService = require('../api/user/authService')
 const InfoService = require('../api/info/infoService')
 
@@ -22,7 +22,7 @@ const InfoService = require('../api/info/infoService')
 // routes.put('/api/items/:id', auth, ItemService.update)
 // routes.delete('/api/listas/:id/:item_id', auth, ItemService.destroy)
 
-routes.get('/api/info', auth, InfoService.index) //READ ALL
+routes.get('/api/info', InfoService.index) //READ ALL
 routes.get('/api/info/popular', auth, InfoService.indexPopular) //READ ALL
 routes.get('/api/info/:id', auth, InfoService.show) // READ ONE
 routes.post('/api/info', auth, InfoService.store) // CREATE
